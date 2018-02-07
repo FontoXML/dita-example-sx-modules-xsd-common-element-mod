@@ -37,8 +37,6 @@
 		]
 	},
 	":_horizontal-insert-div": {
-		"label": "t__Division",
-		"description": "t__Groups content without implying meaning.",
 		"steps": [
 			{
 				"type": "transform/setContextNodeIdToSelectionAncestor",
