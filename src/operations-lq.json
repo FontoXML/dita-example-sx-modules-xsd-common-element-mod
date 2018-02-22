@@ -14,7 +14,7 @@
 			{
 				"type": "transform/setContextNodeIdToSelectionAncestor",
 				"data": {
-					"selectionAncestorNodeSpec": "self::*[fonto:dita-class(., 'topic/abstract') or fonto:dita-class(., 'topic/body') or fonto:dita-class(., 'topic/bodydiv') or fonto:dita-class(., 'topic/dd') or fonto:dita-class(., 'topic/desc') or fonto:dita-class(., 'topic/draft-comment') or fonto:dita-class(., 'topic/entry') or fonto:dita-class(., 'topic/example') or fonto:dita-class(., 'topic/fig') or fonto:dita-class(., 'topic/figgroup') or fonto:dita-class(., 'topic/fn') or fonto:dita-class(., 'topic/itemgroup') or fonto:dita-class(., 'topic/li') or fonto:dita-class(., 'topic/linkinfo') or fonto:dita-class(., 'topic/note') or fonto:dita-class(., 'topic/section') or fonto:dita-class(., 'topic/sectiondiv') or fonto:dita-class(., 'topic/stentry')]"
+					"selectionAncestorNodeSpec": "self::*[fonto:dita-class(., 'topic/div') or fonto:dita-class(., 'topic/abstract') or fonto:dita-class(., 'topic/body') or fonto:dita-class(., 'topic/bodydiv') or fonto:dita-class(., 'topic/dd') or fonto:dita-class(., 'topic/desc') or fonto:dita-class(., 'topic/draft-comment') or fonto:dita-class(., 'topic/entry') or fonto:dita-class(., 'topic/example') or fonto:dita-class(., 'topic/fig') or fonto:dita-class(., 'topic/figgroup') or fonto:dita-class(., 'topic/fn') or fonto:dita-class(., 'topic/itemgroup') or fonto:dita-class(., 'topic/li') or fonto:dita-class(., 'topic/linkinfo') or fonto:dita-class(., 'topic/note') or fonto:dita-class(., 'topic/section') or fonto:dita-class(., 'topic/sectiondiv') or fonto:dita-class(., 'topic/stentry')]"
 				}
 			},
 			{
