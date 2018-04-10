@@ -20,6 +20,40 @@
 			"type": "operation/delete-node"
 		}
 	},
+	":contextual-insert-dlentry--above": {
+		"label": "t__Add row above",
+		"description": "t__Contains a term and a corresponding definition.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "before",
+				"childNodeStructure": [
+					"dlentry",
+					["dt",
+						[{ "bindTo": "selection", "empty": true }]
+					],
+					["dd"]
+				]
+			}
+		}
+	},
+	":contextual-insert-dlentry--below": {
+		"label": "t__Add row below",
+		"description": "t__Contains a term and a corresponding definition.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "after",
+				"childNodeStructure": [
+					"dlentry",
+					["dt",
+						[{ "bindTo": "selection", "empty": true }]
+					],
+					["dd"]
+				]
+			}
+		}
+	},
 	":delete-dlentry-dlhead": {
 		"label": "t__Remove row",
 		"description": "t__Remove this row from the definition table.",
@@ -54,40 +88,6 @@
 				}
 			}
 		]
-	},
-	":dl-append-dlentry": {
-		"label": "t__Add row",
-		"description": "t__Add a row to this definition table.",
-		"steps": {
-			"type": "operation/append-structure",
-			"data": {
-				"childNodeStructure": [
-					"dlentry",
-					["dt",
-						[{ "bindTo": "selection", "empty": true }]
-					],
-					["dd"]
-				],
-				"contextNodeId": "{{contextNodeId}}"
-			}
-		}
-	},
-	":dl-insert-dlentry": {
-		"label": "t__Add row",
-		"description": "t__Add a row to this definition table.",
-		"steps": {
-			"type": "operation/horizontal-insert",
-			"data": {
-				"childNodeStructure": [
-					"dlentry",
-					["dt",
-						[{ "bindTo": "selection", "empty": true }]
-					],
-					["dd"]
-				],
-				"contextNodeId": "{{contextNodeId}}"
-			}
-		}
 	},
 	":dlentry-insert-dd": {
 		"label": "t__Add definition",

@@ -155,9 +155,6 @@ define([
 		//     line, or on the same line to the right of the term. Category: Body elements
 		configureAsFrame(sxModule, 'self::dl', t('definition table'), {
 			contextualOperations: [
-				// @TODO: Remove this operation when dlentry-contextual-insert-as-row-above/below is working again
-				{ name: ':dl-append-dlentry', hideIn: ['context-menu'] },
-				{ name: ':dl-insert-dlentry', hideIn: ['element-menu', 'breadcrumbs-menu'] },
 				{ name: ':contextual-delete-dl' }
 			],
 			tabNavigationItemSelector: 'self::dthd or self::ddhd or self::dt or self::dd',
@@ -181,9 +178,8 @@ define([
 			contextualOperations: [
 				{ name: ':dlentry-insert-dt', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':dlentry-insert-dd', hideIn: ['breadcrumbs-menu'] },
-				// @TODO:
-				// { name: ':dlentry-contextual-insert-as-row-above' },
-				// { name: ':dlentry-contextual-insert-as-row-below' },
+				{ name: ':contextual-insert-dlentry--above' },
+				{ name: ':contextual-insert-dlentry--below' },
 				{ name: ':contextual-delete-dlentry' }
 			],
 			borders: true
@@ -361,12 +357,13 @@ define([
 		//     formatted for output, numbers and alpha characters are usually output with list items in ordered
 		//     lists, while bullets and dashes are usually output with list items in unordered lists. Category:
 		//     Body elements
-		configureMarkupLabel(sxModule, 'self::li', t('item'));
-		// contextualOperations: [
-			// @TODO: Offer operations for inserting a new list item right above or below the context node
-			// { name: 'li-contextual-insert-as-li-above' },
-			// { name: 'li-contextual-insert-as-li-below' }
-		// ]
+		configureProperties(sxModule, 'self::li', {
+			contextualOperations: [
+				{ name: ':contextual-insert-li--above' },
+				{ name: ':contextual-insert-li--below' }
+			],
+			markupLabel: t('item')
+		});
 
 		// lines
 		//     The <lines> element may be used to represent dialogs, lists, text fragments, and so forth. The
@@ -624,12 +621,13 @@ define([
 		//     for output, the items of a simple list are placed each on its own line, with no other prefix such as
 		//     a number (as in an ordered list) or bullet (as in an unordered list). Category: Body elements
 		configureMarkupLabel(sxModule, 'self::sl', t('simple list'));
-		configureMarkupLabel(sxModule, 'self::sli', t('item'));
-		// contextualOperations: [
-			// @TODO
-			// { name: 'sli-contextual-insert-as-sli-above' },
-			// { name: 'sli-contextual-insert-as-sli-below' }
-		// ]
+		configureProperties(sxModule, 'self::sli', {
+			contextualOperations: [
+				{ name: ':contextual-insert-sli--above' },
+				{ name: ':contextual-insert-sli--below' }
+			],
+			markupLabel: t('item')
+		});
 
 		configureAsListElements(sxModule, {
 			list: {
