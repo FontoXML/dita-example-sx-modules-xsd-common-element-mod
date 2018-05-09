@@ -498,6 +498,9 @@ define([
 			defaultTextContainer: 'p',
 			blockHeaderLeft: [
 				createMarkupLabelWidget()
+			],
+			blockOutsideAfter: [
+				createElementMenuButtonWidget()
 			]
 		});
 
