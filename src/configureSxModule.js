@@ -308,15 +308,19 @@ define([
 		//     allows the output formatting processor to bring the image into the text flow. To make the intent of
 		//     the image more accessible for users using screen readers or text-only readers, always include a
 		//     description of the image's content in the alt element. Category: Body elements
-		configureAsImageInFrame(sxModule, 'self::image', t('image'), 'href', {
+		configureAsImageInFrame(sxModule, 'self::image', t('image'), {
 			contextualOperations: [
 				{ name: ':contextual-edit-image' },
 				{ name: ':image-insert-alt' }
-			]
+			],
+			referenceQuery: '@href',
+			isPermanentId: true
 		});
 
-		configureAsInlineImageInFrame(sxModule, 'self::image and fonto:in-inline-layout(.)', t('inline image'), 'href', {
-			defaultTextContainer: 'alt'
+		configureAsInlineImageInFrame(sxModule, 'self::image and fonto:in-inline-layout(.)', t('inline image'), {
+			defaultTextContainer: 'alt',
+			referenceQuery: '@href',
+			isPermanentId: true
 		});
 
 		// index-base
