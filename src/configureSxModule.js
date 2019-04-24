@@ -533,7 +533,8 @@ define([
 		configureAsListElements(sxModule, {
 			list: {
 				selector: 'self::ol',
-				style: configureAsListElements.NUMBERED_LIST_STYLE
+				style: configureAsListElements.NUMBERED_LIST_STYLE,
+				nodeName: 'ol'
 			},
 			item: {
 				selector: 'self::li',
@@ -751,7 +752,8 @@ define([
 		configureAsListElements(sxModule, {
 			list: {
 				selector: 'self::ul',
-				style: configureAsListElements.BULLETED_LIST_STYLE
+				style: configureAsListElements.BULLETED_LIST_STYLE,
+				nodeName: 'ul'
 			},
 			item: {
 				selector: 'self::li',
