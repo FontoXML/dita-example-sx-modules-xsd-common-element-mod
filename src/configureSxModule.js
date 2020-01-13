@@ -562,15 +562,15 @@ export default function configureSxModule(sxModule) {
 	configureAsSimpletableTableElements(sxModule, {
 		stentry: {
 			defaultTextContainer: 'p'
-		}
+		},
+		showInsertionWidget: true,
+		showHighlightingWidget: true
 	});
 
 	configureProperties(sxModule, 'self::simpletable', {
-		contextualOperations: [{ name: ':contextual-delete-simpletable' }],
 		markupLabel: t('simple table'),
 		tabNavigationItemSelector: 'self::stentry',
-		blockHeaderLeft: [createMarkupLabelWidget()],
-		blockOutsideAfter: [createElementMenuButtonWidget()]
+		blockHeaderLeft: [createMarkupLabelWidget()]
 	});
 
 	// sl
@@ -613,14 +613,6 @@ export default function configureSxModule(sxModule) {
 	//     You can place any number of stentry cells in either an <sthead> element (for headings) or <strow>
 	//     element (for rows of data). Category: Table elements
 	configureProperties(sxModule, 'self::stentry', {
-		contextualOperations: [
-			{ name: 'contextual-column-insert' },
-			{ name: 'contextual-column-after-insert' },
-			{ name: 'contextual-column-delete' },
-			{ name: 'contextual-row-insert' },
-			{ name: 'contextual-row-after-insert' },
-			{ name: 'contextual-row-delete' }
-		],
 		markupLabel: t('cell')
 	});
 
